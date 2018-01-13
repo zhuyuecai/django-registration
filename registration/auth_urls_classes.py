@@ -6,7 +6,8 @@ URL patterns for the post-1.11 class-based Django auth views.
 import textwrap
 import warnings
 
-from django.conf.urls import url,reverse_lazy
+from django.conf.urls import url
+from django.urls import reverse_lazy
 from django.contrib.auth import views as auth_views
 
 
