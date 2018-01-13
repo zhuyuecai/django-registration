@@ -34,10 +34,10 @@ urlpatterns = [
         name='auth_logout'),
     url(r'^password/change/$',
         auth_views.PasswordChangeView.as_view(
-            success_url=reverse_lazy('auth_password_change_done')
+            success_url='auth_password_change_done')
         ),
         name='auth_password_change'),
-    url(r'^password/change/done/$',
+    url(r'^password/change/auth_password_change_done/$',
         auth_views.PasswordChangeDoneView.as_view(),
         name='auth_password_change_done'),
     url(r'^password/reset/$',
@@ -46,10 +46,10 @@ urlpatterns = [
             success_url='auth_password_reset_done',
         ),
         name='auth_password_reset'),
-    url(r'^password/reset/complete/$',
+    url(r'^password/reset/auth_password_reset_complete/$',
         auth_views.PasswordResetCompleteView.as_view(),
         name='auth_password_reset_complete'),
-    url(r'^password/reset/done/$',
+    url(r'^password/reset/auth_password_reset_done/$',
         auth_views.PasswordResetDoneView.as_view(),
         name='auth_password_reset_done'),
     url(r'^password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/'
