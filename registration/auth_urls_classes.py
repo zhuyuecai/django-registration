@@ -8,7 +8,7 @@ import warnings
 
 from django.conf.urls import url
 from django.contrib.auth import views as auth_views
-
+from django.shortcuts  import redirect 
 
 warnings.warn(
     textwrap.dedent("""
@@ -33,7 +33,7 @@ urlpatterns = [
         name='auth_logout'),
     url(r'^password/change/$',
         auth_views.PasswordChangeView.as_view(
-            success_url='auth_password_change_done'
+            success_url=redirect('auth_password_change_done')
         ),
         name='auth_password_change'),
     url(r'^password/change/done/$',
