@@ -21,6 +21,8 @@ warnings.warn(
 )
 
 
+reset_view = auth_views.PasswordResetDoneView.as_view
+
 urlpatterns = [
     url(r'^login/$',
         auth_views.LoginView.as_view(
@@ -43,7 +45,7 @@ urlpatterns = [
     url(r'^password/reset/$',
         auth_views.PasswordResetView.as_view(
             email_template_name='registration/password_reset_email.txt',
-            success_url=reverse_lazy(auth_views.PasswordResetDoneView.as_view()),
+            success_url=reverse_lazy(reset_view),
         ),
         name='auth_password_reset'),
     url(r'^password/reset/complete/$',
