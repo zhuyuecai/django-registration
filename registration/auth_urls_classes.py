@@ -34,7 +34,7 @@ urlpatterns = [
         name='auth_logout'),
     url(r'^password/change/$',
         auth_views.PasswordChangeView.as_view(
-            success_url=reverse_lazy(auth_views.PasswordChangeDoneView.as_view()))
+            success_url=reverse_lazy(auth_views.PasswordChangeDoneView.as_view())
         ),
         name='auth_password_change'),
     url(r'^password/change/done/$',
